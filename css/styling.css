@@ -172,6 +172,12 @@ h2{
    float: right;
    display: block;
  }
+ .dispReg{
+   margin-top: 100%;
+ }
+ .error{
+   margin-top:10%;
+ }
 }
 
 @media screen and (max-width: 760px) {

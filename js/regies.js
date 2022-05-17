@@ -102,12 +102,12 @@ function regNumber() {
                 regBox.value = "";
 
                 setTimeout(function () {
-                    error.innerHTML = Instantiate.getMessage();
+                    // error.innerHTML = Instantiate.getMessage();
 
                 }, 0);
 
                 setTimeout(function () {
-                    error.innerHTML = "";
+                    // error.innerHTML = "";
 
 
                 }, 3500);
@@ -116,12 +116,12 @@ function regNumber() {
                 addObject(Instantiate.regNoAdded());
 
                 setTimeout(function () {
-                    error.innerHTML = Instantiate.getMessage();
+                    // error.innerHTML = Instantiate.getMessage();
 
                 }, 0);
 
                 setTimeout(function () {
-                    error.innerHTML = "";
+                    // error.innerHTML = "";
 
 
                 }, 3500);
