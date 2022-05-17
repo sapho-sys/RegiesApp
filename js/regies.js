@@ -37,10 +37,11 @@ let Instantiate = regFactory(enteredPlate);
 
 
 
-
+//handles the values entered then 
 function addObject(myObject){
     var changed = Object.keys(myObject);
     for (var i=0; i < changed.length; i++) {
+       // create element to display it as silver number plate
         let newRegNo = document.createElement('plates');
     
         newRegNo.textContent = changed[i];
@@ -49,10 +50,11 @@ function addObject(myObject){
     }
     }
 
-
+//handles all the plates entered
     function addArray(myArray){
         if (myArray.length != 0) {
             for (var i=0; i < myArray.length; i++) {
+                //create element to display all plates
                 let newRegNo = document.createElement('plates');
         
                 newRegNo.textContent = myArray[i];
@@ -72,7 +74,7 @@ function addObject(myObject){
         }
 
 
-//  Show registration numbers that already in the localStorage
+//  Call function that Show registration numbers that already in the localStorage
 addObject(Instantiate.regNoAdded());
 
 

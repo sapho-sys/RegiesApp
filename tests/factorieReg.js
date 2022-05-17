@@ -28,9 +28,9 @@ function regFactory(regNoData) {
 
     }
 
-    function getMessage(){
-        return message
-    }
+    // function getMessage(){
+    //     return message
+    // }
 
 
 
@@ -88,7 +88,7 @@ function regFactory(regNoData) {
         regNoAdded,
         showRegNo,
         showTown,
-        getMessage
+        // getMessage
         
     }
 }
