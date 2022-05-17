@@ -28,12 +28,6 @@ function regFactory(regNoData) {
 
     }
 
-    // function getMessage(){
-    //     return message
-    // }
-
-
-
 
 //function where we 
     function showRegNo(regTown) {
@@ -88,7 +82,7 @@ function regFactory(regNoData) {
         regNoAdded,
         showRegNo,
         showTown,
-        // getMessage
+        
         
     }
 }
