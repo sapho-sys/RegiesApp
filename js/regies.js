@@ -37,7 +37,7 @@ let Instantiate = regFactory(enteredPlate);
 
 
 
-//handles the values entered then 
+//handles the regies entered and store each in a an object
 function addObject(myObject) {
     var changed = Object.keys(myObject);
     for (var i = 0; i < changed.length; i++) {
