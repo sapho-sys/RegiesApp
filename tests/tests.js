@@ -1,9 +1,4 @@
 describe('Registration App Testing' , function(){
-    
-
-
-
-
     describe('Add registration plate' , function(){
         it('Should add "CA 123456" ' , function(){
             let Instantiate = regFactory();
@@ -34,11 +29,6 @@ describe('Registration App Testing' , function(){
 
         });
     });
-
-
-
-
-
     describe('Show registration plate' , function(){
         it('Should return registration numbers from Cape Town only "CA 123 456" & "CA 123456", if Cape Town is the selected town' , function(){
             let Instantiate = regFactory();

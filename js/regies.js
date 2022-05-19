@@ -19,7 +19,7 @@ resetBtn.addEventListener('click', resetPage)
 
 
 var strRadio = "";
-let enteredPlate;
+
 //regex for my towns
 const regExp1 = /^((CA|CF|CJ|CL)\s([0-9]){6})$/;
 const regExp2 = /^((CA|CF|CJ|CL)\s([0-9]){3}\s([0-9]){3})$/;
@@ -27,9 +27,14 @@ const regExp3 = /^((CA|CF|CJ|CL)\s([0-9]){3}\-([0-9]){3})$/;
 
 
 if (localStorage['registration numbers']) {
-    enteredPlate = JSON.parse(localStorage.getItem("registration numbers"));
+    var enteredPlate = JSON.parse(localStorage.getItem("registration numbers"));
 
 }
+
+
+
+
+
 
 
 //  Instantiate the instance of the factory function
@@ -37,7 +42,13 @@ let Instantiate = regFactory(enteredPlate);
 
 
 
-//handles the regies entered and store each in a an object
+
+
+
+
+
+
+//handles the values entered then 
 function addObject(myObject) {
     var changed = Object.keys(myObject);
     for (var i = 0; i < changed.length; i++) {
@@ -71,12 +82,13 @@ function addArray(myArray) {
             dispReg.innerHTML = "";
         }, 3500);
     }
+    
 }
 
 
 //  Call function that Show registration numbers that already in the localStorage
-addObject(Instantiate.regNoAdded());
 
+addObject(Instantiate.regNoAdded())
 
 
 // function for Add registration button
@@ -89,8 +101,7 @@ function regNumber() {
     document.getElementById('Kuilsriver').checked = false;
     strRadio = "";
 
-    // instRegistration.setReg(regTextbox.value);
-
+   
 
     if (regBox.value !== "") {
 
@@ -168,15 +179,23 @@ function regNumber() {
         }, 5500);
     }
 
+   
     localStorage.setItem("registration", JSON.stringify(Instantiate.regNoAdded()));
+    
+
 
 }
+
+
+
 
 // function for Show registration button
 
 function showTownReg() {
-    dispReg.innerHTML = "";
 
+
+    dispReg.innerHTML = "";
+    
     var checkedTownBtn = document.querySelector("input[name='town']:checked");
 
     if (checkedTownBtn) {
@@ -185,9 +204,12 @@ function showTownReg() {
     }
 
     if (strRadio !== "") {
-        Instantiate.showRegNo(strRadio);
 
+
+        Instantiate.showRegNo(strRadio);
         addArray(Instantiate.showTown());
+    
+        
 
     } else {
         setTimeout(function () {
@@ -207,6 +229,7 @@ function showTownReg() {
             regBox.value = "";
             dispReg.innerHTML = "";
             addObject(Instantiate.regNoAdded());
+            
 
         }, 5500);
 
@@ -219,6 +242,7 @@ function showTownReg() {
 //  function for Show All registration button
 
 function showAllTownReg() {
+    
     dispReg.innerHTML = "";
     document.getElementById('Cpt').checked = false;
     document.getElementById('Paarl').checked = false;
@@ -226,9 +250,13 @@ function showAllTownReg() {
     document.getElementById('Kuilsriver').checked = false;
     strRadio = "";
 
+    
+
     var objectForTwns = Object.keys(Instantiate.regNoAdded());
     if (objectForTwns.length != 0) {
         addObject(Instantiate.regNoAdded());
+        
+
 
     } else {
         setTimeout(function () {
@@ -252,6 +280,9 @@ function showAllTownReg() {
     }
 
 }
+
+
+
 
 
 // function for Reset Button
