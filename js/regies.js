@@ -187,7 +187,10 @@ function regNumber() {
 }
 
 
+// Retrieve the object from storage
+// var retrievedObject = localStorage.getItem("registration");
 
+// console.log('retrievedObject: ', JSON.parse(retrievedObject));
 
 // function for Show registration button
 
