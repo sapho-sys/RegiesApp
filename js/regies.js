@@ -195,7 +195,7 @@ var retrievedObject = localStorage.getItem("registration");
 console.log('retrievedObject: ', JSON.parse(retrievedObject));
 
 let plates = JSON.parse(retrievedObject);
-dispReg.innerHTML= Object.keys(plates);
+dispReg.innerHTML= Object.keys(plates).join(" ");
 
 
 
