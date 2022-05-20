@@ -86,9 +86,6 @@ function addArray(myArray) {
 }
 
 
-//  Call function that Show registration numbers that already in the localStorage
-
-addObject(Instantiate.regNoAdded())
 
 
 // function for Add registration button
@@ -187,10 +184,22 @@ function regNumber() {
 }
 
 
-// Retrieve the object from storage
-// var retrievedObject = localStorage.getItem("registration");
+//  Call function that Show registration numbers that already in the localStorage
 
-// console.log('retrievedObject: ', JSON.parse(retrievedObject));
+addObject(Instantiate.regNoAdded());
+
+
+// Retrieve the object from storage
+var retrievedObject = localStorage.getItem("registration");
+
+console.log('retrievedObject: ', JSON.parse(retrievedObject));
+
+let plates = JSON.parse(retrievedObject);
+dispReg.innerHTML= Object.keys(plates);
+
+
+
+
 
 // function for Show registration button
 
