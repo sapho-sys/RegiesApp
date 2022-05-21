@@ -24,12 +24,16 @@ var strRadio = "";
 const regExp1 = /^((CA|CF|CJ|CL)\s([0-9]){6})$/;
 const regExp2 = /^((CA|CF|CJ|CL)\s([0-9]){3}\s([0-9]){3})$/;
 const regExp3 = /^((CA|CF|CJ|CL)\s([0-9]){3}\-([0-9]){3})$/;
+let enteredPlate;
 
-
-if (localStorage['registration numbers']) {
-    var enteredPlate = JSON.parse(localStorage.getItem("registration numbers"));
-
+if (localStorage['registration']) {
+    enteredPlate = JSON.parse(localStorage.getItem("registration"));
+    addObject(enteredPlate);
+    
+    
 }
+
+
 
 
 
@@ -56,6 +60,7 @@ function addObject(myObject) {
         let newRegNo = document.createElement('plates');
 
         newRegNo.textContent = changed[i];
+        console.log(newRegNo);
         dispReg.appendChild(newRegNo);
 
     }
@@ -186,16 +191,16 @@ function regNumber() {
 
 //  Call function that Show registration numbers that already in the localStorage
 
-addObject(Instantiate.regNoAdded());
+// addObject(Instantiate.regNoAdded());
 
 
 // Retrieve the object from storage
-var retrievedObject = localStorage.getItem("registration");
+// var retrievedObject = localStorage.getItem("registration");
 
-console.log('retrievedObject: ', JSON.parse(retrievedObject));
+// console.log('retrievedObject: ', JSON.parse(retrievedObject));
 
-let plates = JSON.parse(retrievedObject);
-dispReg.innerHTML= Object.keys(plates).join(" ");
+// let plates = JSON.parse(retrievedObject);
+// dispReg.innerHTML= Object.keys(plates).join(" ");
 
 
 
