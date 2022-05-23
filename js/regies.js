@@ -27,29 +27,17 @@ const regExp3 = /^((CA|CF|CJ|CL)\s([0-9]){3}\-([0-9]){3})$/;
 let enteredPlate;
 
 if (localStorage['registration']) {
+    //get data from local storage
     enteredPlate = JSON.parse(localStorage.getItem("registration"));
+    //call the function that handles the plates 
     addObject(enteredPlate);
     
     
 }
 
 
-
-
-
-
-
-
-
 //  Instantiate the instance of the factory function
 let Instantiate = regFactory(enteredPlate);
-
-
-
-
-
-
-
 
 
 //handles the values entered then 
@@ -60,7 +48,7 @@ function addObject(myObject) {
         let newRegNo = document.createElement('plates');
 
         newRegNo.textContent = changed[i];
-        console.log(newRegNo);
+        
         dispReg.appendChild(newRegNo);
 
     }
@@ -74,6 +62,7 @@ function addArray(myArray) {
             let newRegNo = document.createElement('plates');
 
             newRegNo.textContent = myArray[i];
+            console.log(newRegNo);
             dispReg.appendChild(newRegNo);
 
         }
@@ -114,30 +103,9 @@ function regNumber() {
                 addObject(Instantiate.regNoAdded());
                 regBox.value = "";
 
-                setTimeout(function () {
-                    // error.innerHTML = Instantiate.getMessage();
-
-                }, 0);
-
-                setTimeout(function () {
-                    // error.innerHTML = "";
-
-
-                }, 3500);
-
             } else {
                 addObject(Instantiate.regNoAdded());
 
-                setTimeout(function () {
-                    // error.innerHTML = Instantiate.getMessage();
-
-                }, 0);
-
-                setTimeout(function () {
-                    // error.innerHTML = "";
-
-
-                }, 3500);
             }
 
         } else {
@@ -286,12 +254,8 @@ function showAllTownReg() {
             document.getElementById('Paarl').checked = false;
             document.getElementById('Stellies').checked = false;
             document.getElementById('Kuilsriver').checked = false;
-
-
-
             regBox.value = "";
             dispReg.innerHTML = "";
-
 
         }, 3500);
     }
@@ -319,8 +283,6 @@ function resetPage() {
         document.getElementById('Paarl').checked = false;
         document.getElementById('Stellies').checked = false;
         document.getElementById('Kuilsriver').checked = false;
-
-
         dispReg.innerHTML = "";
         regBox.value = "";
         location.reload();
