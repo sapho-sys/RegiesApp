@@ -31,8 +31,8 @@ if (localStorage['registration']) {
     enteredPlate = JSON.parse(localStorage.getItem("registration"));
     //call the function that handles the plates 
     addObject(enteredPlate);
-    
-    
+
+
 }
 
 
@@ -48,7 +48,7 @@ function addObject(myObject) {
         let newRegNo = document.createElement('plates');
 
         newRegNo.textContent = changed[i];
-        
+
         dispReg.appendChild(newRegNo);
 
     }
@@ -76,7 +76,7 @@ function addArray(myArray) {
             dispReg.innerHTML = "";
         }, 3500);
     }
-    
+
 }
 
 
@@ -92,7 +92,7 @@ function regNumber() {
     document.getElementById('Kuilsriver').checked = false;
     strRadio = "";
 
-   
+
 
     if (regBox.value !== "") {
 
@@ -105,6 +105,21 @@ function regNumber() {
 
             } else {
                 addObject(Instantiate.regNoAdded());
+                setTimeout(function () {
+                    error.innerHTML = Instantiate.Message();
+                    error.classList.add('error');
+
+                }, 0);
+                setTimeout(function () {
+                    document.getElementById('Cpt').checked = false;
+                    document.getElementById('Paarl').checked = false;
+                    document.getElementById('Stellies').checked = false;
+                    document.getElementById('Kuilsriver').checked = false;
+                    regBox.value="";
+
+                    error.innerHTML = "";
+                    error.classList.remove('error');
+                }, 5500)
 
             }
 
@@ -149,9 +164,9 @@ function regNumber() {
         }, 5500);
     }
 
-   
+
     localStorage.setItem("registration", JSON.stringify(Instantiate.regNoAdded()));
-    
+
 
 
 }
@@ -180,7 +195,7 @@ function showTownReg() {
 
 
     dispReg.innerHTML = "";
-    
+
     var checkedTownBtn = document.querySelector("input[name='town']:checked");
 
     if (checkedTownBtn) {
@@ -193,8 +208,8 @@ function showTownReg() {
 
         Instantiate.showRegNo(strRadio);
         addArray(Instantiate.showTown());
-    
-        
+
+
 
     } else {
         setTimeout(function () {
@@ -214,7 +229,7 @@ function showTownReg() {
             regBox.value = "";
             dispReg.innerHTML = "";
             addObject(Instantiate.regNoAdded());
-            
+
 
         }, 5500);
 
@@ -227,7 +242,7 @@ function showTownReg() {
 //  function for Show All registration button
 
 function showAllTownReg() {
-    
+
     dispReg.innerHTML = "";
     document.getElementById('Cpt').checked = false;
     document.getElementById('Paarl').checked = false;
@@ -235,12 +250,12 @@ function showAllTownReg() {
     document.getElementById('Kuilsriver').checked = false;
     strRadio = "";
 
-    
+
 
     var objectForTwns = Object.keys(Instantiate.regNoAdded());
     if (objectForTwns.length != 0) {
         addObject(Instantiate.regNoAdded());
-        
+
 
 
     } else {

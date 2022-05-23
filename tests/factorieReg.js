@@ -1,7 +1,7 @@
 function regFactory(regNoData) {
     var storeRegNo = regNoData || {};
     var checkedTown = [];
-
+    var duplicateMessage= "";
     const regExp = /^((CA|CF|CJ|CL)\s([0-9]){6})$/;
     const regExp1 = /^((CA|CF|CJ|CL)\s([0-9]){3}\s([0-9]){3})$/;
     const regExp2 = /^((CA|CF|CJ|CL)\s([0-9]){3}\-([0-9]){3})$/;
@@ -16,11 +16,16 @@ function regFactory(regNoData) {
     
                 } else {
                     storeRegNo[regNumber]++;
+                    duplicateMessage= "This plate has already been entered";
                     return false
     
                 }
             }  
         }
+    }
+
+    function Message(){
+        return duplicateMessage;
     }
 
     function regNoAdded() {
@@ -82,6 +87,7 @@ function regFactory(regNoData) {
         regNoAdded,
         showRegNo,
         showTown,
+        Message
         
         
     }
