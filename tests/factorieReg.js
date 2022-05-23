@@ -73,7 +73,22 @@ function regFactory(regNoData) {
                 }
             }
         }
+
+
+    // if(regTown === "Cape Town" || regTown === "Kuilriver" || regTown === "Paarl" || regTown === "Stellenbosch"){
+    //     var strStoreRegNo=Object.keys(storeRegNo);
+    //     for(var i=0; i < strStoreRegNo.length;i++){
+    //       if(strStoreRegNo[i].startsWith("CA") || strStoreRegNo[i].startsWith("CF") || strStoreRegNo[i].startsWith("CJ") || strStoreRegNo[i].startsWith("CL")){
+    //         checkedTown.push(strStoreRegNo[i])
+    //       }
+    //     }
+    //   }
+
+
     }
+
+
+    
 
 
 
